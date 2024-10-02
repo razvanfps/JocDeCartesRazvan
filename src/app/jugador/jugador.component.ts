@@ -10,5 +10,7 @@ import {Component, Input} from '@angular/core';
 export class JugadorComponent {
 
   @Input() name: any;
+  @Input() posicio: any;
 
+  constructor() {}
 }

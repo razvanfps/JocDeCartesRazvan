@@ -10,6 +10,7 @@
 
 .card-stack {
   position: relative;
+  display: inline-block;
   img {
     position: absolute;
     width: 120px;
@@ -53,4 +54,23 @@
 .player-position {
   position: absolute;
   right: 0;
+}
+
+.start-label-box {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 100px;
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 25vw;
+    height: auto;
+
+    &:hover {
+      filter:brightness(1.25);
+      cursor: pointer;
+    }
+  }
 }

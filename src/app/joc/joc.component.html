@@ -2,6 +2,7 @@
   <app-jugador
     [ngStyle]="{ 'top.px': 100 + i * 120 }"
     [name] = "player"
+    [posicio] = i
     class="player-position"
   ></app-jugador>
 }
@@ -38,5 +39,11 @@
       style="right: 25px"
       src="assets/img/cards/{{ currentCard }}.png"
     />
+
   </div>
+
+  <div class="start-label-box">
+    <img src="assets/img/play.png" alt="">
+  </div>
+
 </div>
