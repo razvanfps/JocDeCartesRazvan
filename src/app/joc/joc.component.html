@@ -3,7 +3,10 @@
     [ngStyle]="{ 'top.px': 100 + i * 120 }"
     [name] = "player"
     [posicio] = i
+    [imatgeURL]="imatges[i]"
+    [punts]="punts[i]"
     class="player-position"
+    id = "jugador{{i}}"
   ></app-jugador>
 }
 

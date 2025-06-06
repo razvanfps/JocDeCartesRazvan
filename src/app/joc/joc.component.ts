@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Joc} from "../../models/joc";
 import {JugadorComponent} from "../jugador/jugador.component";
 import {NgForOf, NgIf, NgStyle} from "@angular/common";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-joc',
@@ -9,21 +10,26 @@ import {NgForOf, NgIf, NgStyle} from "@angular/common";
   imports: [
     JugadorComponent,
     NgStyle,
-    NgForOf,
     NgIf
   ],
   templateUrl: './joc.component.html',
   styleUrl: './joc.component.css'
 })
 export class JocComponent implements OnInit {
+  displayCarta!: HTMLElement;
+  fons!: string[];
   pickCardAnimation = false;
   currentCard: string | undefined | any = '';
   game: Joc | undefined;
+  imatges: string[] = ['/assets/img/profile/monkey.png','/assets/img/profile/pinguin.svg','/assets/img/profile/serious-woman.svg'];
+  punts : number[] = [0,0,0]
+  constructor(private router: Router) {}
 
-  constructor() {}
 
   ngOnInit(): void {
     this.newGame();
+    this.fons = ["background-color: red","background-color: orange","background-color: orange"]
+    this.displayCarta = document.getElementById('displayCarta')!;
   }
 
   newGame() {
@@ -42,6 +48,10 @@ export class JocComponent implements OnInit {
       }, 1000);
     }
   }
+  mostrarCarta(){
+    this.displayCarta.innerText = "Nom de la carta: " + this.game?.playedCards[this.game?.playedCards.length-1]
+  }
+
 
 
 }
